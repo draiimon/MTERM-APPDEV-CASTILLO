@@ -1,0 +1,27 @@
+{
+  "name": "express-post",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build:nodemon":"nodemon ./bin/www",
+    "build:tailwind": "npx tailwindcss -i ./src/style.css -o ./public/stylesheet/style.css",
+    "build": "concurrently \"npm run build:tailwind\" \"npm run build:nodemon\" -n \"nodemon|tailwind\" --name-separator \"|\"",
+    "type": "module"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.6.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "daisyui": "^3.8.2",
+    "nodemon": "^3.0.1",
+    "tailwindcss": "^3.3.3"
+  }
+}
